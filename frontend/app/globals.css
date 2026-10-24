@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 251 249 245; /* #FBF9F5 Warm Linen / Off-White */
+    --foreground: 26 25 23;    /* #1A1917 Deep Espresso */
+    --card: 255 255 255;       /* #FFFFFF Pure Linen White */
+    --border: 232 227 217;     /* #E8E3D9 Subtle Warm Border */
+    --muted: 107 102 94;       /* #6B665E Muted Espresso */
+    --accent: 140 109 70;      /* #8C6D46 Rich Caramel */
+    --accent-light: 196 164 124; /* #C4A47C Ochre */
+  }
+  .dark {
+    --background: 13 13 14;    /* #0D0D0E Deep Charcoal / Pitch Black */
+    --foreground: 250 250 250; /* #FAFAFA Crisp Warm White */
+    --card: 22 22 24;          /* #161618 Matte Dark Graphite */
+    --border: 38 38 42;        /* #26262A Subtle Muted Border */
+    --muted: 161 161 170;      /* #A1A1AA Muted Text */
+    --accent: 250 204 21;      /* #FACC15 Vibrant Electric Yellow */
+    --accent-light: 234 179 8; /* #EAB308 Amber Accent */
+  }
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ================= 21st.dev "Carmen Linen" Light Mode Theme ================= */
+html:not(.dark) {
+  background-color: #FBF9F5;
+  color: #1A1917;
+}
+
+html:not(.dark) body {
+  background-color: #FBF9F5;
+  color: #1A1917;
+}
+
+/* Canvas / Page Backgrounds in Light Mode */
+html:not(.dark) .min-h-screen.bg-white,
+html:not(.dark) div.bg-white.text-slate-900 {
+  background-color: #FBF9F5 !important;
+  color: #1A1917 !important;
+}
+
+/* Navigation & Header */
+html:not(.dark) header {
+  background-color: rgba(251, 249, 245, 0.92) !important;
+  border-color: #E8E3D9 !important;
+}
+
+/* Card / Surface Backgrounds: Pure Linen White (#FFFFFF) */
+html:not(.dark) .bg-white {
+  background-color: #FFFFFF !important;
+}
+
+/* Warm Borders (#E8E3D9) */
+html:not(.dark) .border-slate-200,
+html:not(.dark) .border-slate-200\/80,
+html:not(.dark) .border-slate-200\/90,
+html:not(.dark) .border-slate-200\/60,
+html:not(.dark) .border-slate-300,
+html:not(.dark) .border-blue-100,
+html:not(.dark) .border-blue-200 {
+  border-color: #E8E3D9 !important;
+}
+
+/* Secondary Surface Backgrounds: Warm Linen Tint (#F7F4EE) */
+html:not(.dark) .bg-slate-50,
+html:not(.dark) .bg-slate-50\/50,
+html:not(.dark) .bg-slate-50\/70,
+html:not(.dark) .bg-slate-100 {
+  background-color: #F7F4EE !important;
+  border-color: #E8E3D9 !important;
+}
+
+/* Primary Headings & Bold Text: Deep Espresso (#1A1917) */
+html:not(.dark) .text-slate-950,
+html:not(.dark) .text-slate-900,
+html:not(.dark) .text-slate-800 {
+  color: #1A1917 !important;
+}
+
+/* Muted / Secondary Text: Deep Slate Espresso (#6B665E) */
+html:not(.dark) .text-slate-700,
+html:not(.dark) .text-slate-600,
+html:not(.dark) .text-slate-500 {
+  color: #6B665E !important;
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #8C8479 !important;
+}
+
+/* Primary Accent: Rich Caramel (#8C6D46) */
+html:not(.dark) .bg-blue-600 {
+  background-color: #8C6D46 !important;
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) .hover\:bg-blue-700:hover {
+  background-color: #785C38 !important;
+}
+
+html:not(.dark) .text-blue-600,
+html:not(.dark) .text-blue-700 {
+  color: #8C6D46 !important;
+}
+
+html:not(.dark) .stroke-blue-600 {
+  stroke: #8C6D46 !important;
+}
+
+/* Accent Tint & Highlights: Warm Ochre Tint (#F3EDE2) */
+html:not(.dark) .bg-blue-50,
+html:not(.dark) .bg-blue-50\/20,
+html:not(.dark) .bg-blue-50\/40,
+html:not(.dark) .bg-blue-50\/50,
+html:not(.dark) .bg-blue-50\/60,
+html:not(.dark) .bg-blue-100,
+html:not(.dark) .bg-blue-100\/70 {
+  background-color: #F3EDE2 !important;
+  color: #8C6D46 !important;
+  border-color: #E8E3D9 !important;
+}
+
+html:not(.dark) .focus\:border-blue-600:focus {
+  border-color: #8C6D46 !important;
+}
+
+html:not(.dark) .focus\:ring-blue-100:focus {
+  --tw-ring-color: #F3EDE2 !important;
+}
+
+html:not(.dark) ::selection {
+  background-color: #8C6D46;
+  color: #FFFFFF;
+}
+
+/* Carmen Linen Warm Grid Dots */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(140, 109, 70, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Radial Glow Gradient (Light Mode) */
+.bg-radial-gradient-light {
+  background: radial-gradient(circle at 50% 0%, rgba(196, 164, 124, 0.15) 0%, rgba(251, 249, 245, 0) 70%);
+}
+
+/* ================= 21st.dev "Baroworks" Dark & Yellow Theme ================= */
+html.dark {
+  background-color: #0D0D0E;
+  color: #FAFAFA;
+}
+
+html.dark body {
+  background-color: #0D0D0E;
+  color: #FAFAFA;
+}
+
+/* Primary Dark Backgrounds: Deep Charcoal / Pitch Black (#0D0D0E) */
+html.dark .dark\:bg-slate-950,
+html.dark .dark\:bg-slate-950\/95,
+html.dark .dark\:bg-slate-950\/80,
+html.dark .dark\:bg-slate-950\/60,
+html.dark .dark\:bg-slate-950\/50,
+html.dark .dark\:bg-slate-950\/40,
+html.dark .dark\:bg-slate-950\/30,
+html.dark .dark\:bg-slate-950\/20,
+html.dark .bg-slate-950 {
+  background-color: #0D0D0E !important;
+}
+
+/* Navigation & Header in Dark Mode */
+html.dark header {
+  background-color: rgba(13, 13, 14, 0.92) !important;
+  border-color: #26262A !important;
+}
+
+/* Card / Surface Backgrounds: Matte Dark Graphite (#161618) */
+html.dark .dark\:bg-slate-900,
+html.dark .dark\:bg-slate-900\/90,
+html.dark .dark\:bg-slate-900\/60,
+html.dark .dark\:bg-slate-900\/50,
+html.dark .dark\:bg-slate-900\/40,
+html.dark .dark\:bg-slate-800 {
+  background-color: #161618 !important;
+}
+
+/* Subtle Muted Borders: (#26262A) */
+html.dark .dark\:border-slate-800,
+html.dark .dark\:border-slate-800\/80,
+html.dark .dark\:border-slate-700,
+html.dark .dark\:border-blue-900,
+html.dark .dark\:border-blue-800,
+html.dark .dark\:border-blue-700 {
+  border-color: #26262A !important;
+}
+
+/* Dark Text Colors: Crisp Warm White (#FAFAFA) */
+html.dark .dark\:text-white,
+html.dark .dark\:text-slate-100,
+html.dark .dark\:text-slate-200 {
+  color: #FAFAFA !important;
+}
+
+/* Muted Text: (#A1A1AA) */
+html.dark .dark\:text-slate-400,
+html.dark .dark\:text-slate-300,
+html.dark .dark\:text-slate-500,
+html.dark .dark\:text-slate-600 {
+  color: #A1A1AA !important;
+}
+
+/* Primary Accent & Highlights: Vibrant Baroworks Electric Yellow (#FACC15 / #EAB308) */
+html.dark .bg-blue-600 {
+  background-color: #FACC15 !important;
+  color: #0D0D0E !important;
+}
+
+html.dark .hover\:bg-blue-700:hover {
+  background-color: #EAB308 !important;
+  color: #0D0D0E !important;
+}
+
+html.dark .dark\:text-blue-400,
+html.dark .dark\:text-blue-300,
+html.dark .dark\:text-blue-200 {
+  color: #FACC15 !important;
+}
+
+html.dark .stroke-blue-600 {
+  stroke: #FACC15 !important;
+}
+
+/* Subtle Yellow Tint Badges & Containers */
+html.dark .dark\:bg-blue-950,
+html.dark .dark\:bg-blue-950\/70,
+html.dark .dark\:bg-blue-950\/60,
+html.dark .dark\:bg-blue-950\/50,
+html.dark .dark\:bg-blue-950\/40,
+html.dark .dark\:bg-blue-950\/30,
+html.dark .dark\:bg-blue-950\/20 {
+  background-color: rgba(250, 204, 21, 0.08) !important;
+  color: #FACC15 !important;
+  border-color: rgba(250, 204, 21, 0.25) !important;
+}
+
+/* Dark Focus & Selection */
+html.dark .dark\:focus\:border-blue-600:focus,
+html.dark .focus\:border-blue-600:focus {
+  border-color: #FACC15 !important;
+}
+
+html.dark .dark\:focus\:ring-blue-900\/30:focus {
+  --tw-ring-color: rgba(250, 204, 21, 0.2) !important;
+}
+
+html.dark ::selection {
+  background-color: #FACC15;
+  color: #0D0D0E;
+}
+
+/* Dark Mode Grid Dots: Ambient Yellow */
+.dark .bg-grid-dots {
+  background-image: radial-gradient(rgba(250, 204, 21, 0.09) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Dark Mode Radial Gradient: Amber / Yellow Aura */
+.dark .bg-radial-gradient-light {
+  background: radial-gradient(circle at 50% 0%, rgba(250, 204, 21, 0.08) 0%, rgba(13, 13, 14, 0) 70%);
+}
+
+/* Ambient Radial Glow Backdrop (Transitions between Carmen Linen & Baroworks Yellow Aura) */
+.ambient-glow-backdrop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 350px;
+  background-image: radial-gradient(ellipse at top, #F3EDE2 0%, #FBF9F5 55%, transparent 100%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -10;
+  transition: opacity 0.3s ease, background-image 0.3s ease;
+}
+
+html:not(.dark) .ambient-glow-backdrop {
+  background-image: radial-gradient(ellipse at top, #F3EDE2 0%, #FBF9F5 55%, transparent 100%) !important;
+  opacity: 1 !important;
+}
+
+html.dark .ambient-glow-backdrop {
+  opacity: 1 !important;
+  background-image: radial-gradient(ellipse at top, rgba(234, 179, 8, 0.12) 0%, rgba(250, 204, 21, 0.05) 45%, transparent 75%) !important;
+}
+
+@media (min-width: 768px) {
+  .ambient-glow-backdrop {
+    width: 800px;
+    height: 450px;
+  }
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 109, 70, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 109, 70, 0.45);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(38, 38, 42, 0.8);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 204, 21, 0.4);
+}
+
+/* Print Styles for Exporting Formal PDF Report */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #1A1917 !important;
+  }
+  .print-card {
+    border: 1px solid #E8E3D9 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}

@@ -1,30 +1,4 @@
-# Node & Next.js
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/build/
-frontend/.vercel/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-backend/__pycache__/
-backend/*.pem
-ca_bundle.pem
-*.pem
-env/
+node_modules/
 venv/
-ENV/
-.venv/
-
-# Environment Variables
 .env
-.env.local
-.env.*.local
-
-# OS
-.DS_Store
-Thumbs.db
+__pycache__/
